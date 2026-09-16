@@ -215,12 +215,15 @@ node examples/01-top-ai-coding-tools.mjs
 Both were run against `dist/index.js` and returned real tool results. See the
 [Verification](#verification) section for the exact output.
 
-If you prefer the published package shape, `npx -y harpd-mcp` resolves the same
-`bin` entry:
+If you prefer the published package shape, the `bin` entry is `harpd-mcp`, so
+once the package is published on npm the equivalent config is:
 
 ```jsonc
 { "command": "npx", "args": ["-y", "harpd-mcp"] }
 ```
+
+This package is **not published to npm yet**, so use the absolute-path form
+above for now. Publishing is a separate step and is not claimed here.
 
 ### Claude Desktop — NOT VERIFIED in this repo
 
