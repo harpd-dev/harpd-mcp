@@ -85,6 +85,12 @@ Read-only. Nothing is written back, and no API key is required.
 | `data/manifest.json` | — | dataset metadata |
 
 Record counts are read from the datasets themselves at runtime, not hard-coded.
+
+> **Scope note.** The product catalog is **1,122** records (`products.json` and the
+> three ranking boards). The research rows — `ai-agent-index` (334), `ai-tools-index`
+> (693) and `developer-tools-index` (1,918) — are separate **coverage slices** of the
+> Harpd Discovery Index, not the product catalog. They are different datasets with
+> their own sizes; only the catalog rows must equal the canonical product count.
 Full input/output reference: [`docs/tools.md`](docs/tools.md).
 
 ## How to run it
