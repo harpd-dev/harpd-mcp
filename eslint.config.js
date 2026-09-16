@@ -3,7 +3,16 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: ['dist/**', 'node_modules/**', 'coverage/**', '*.tgz'],
+    ignores: [
+      'dist/**',
+      'node_modules/**',
+      'coverage/**',
+      '*.tgz',
+      // CI checks out harpd-ai-datasets here so tests run against real data.
+      // It is third-party code maintained in its own repo, not source of this
+      // package, so it must not be linted here.
+      '.datasets/**',
+    ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
