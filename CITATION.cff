@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+title: "harpd-mcp"
+message: >-
+  If you use this server, please cite it as below. The datasets it serves are
+  published by Harpd and licensed CC BY 4.0; cite the dataset too when you
+  quote the data.
+type: software
+authors:
+  - family-names: "Harpd"
+    name-particle: ""
+    given-names: ""
+    email: harpdsupport@gmail.com
+repository-code: "https://github.com/harpd-dev/harpd-mcp"
+url: "https://harpd.com/data/"
+abstract: >-
+  harpd-mcp is a Model Context Protocol (MCP) server that exposes Harpd's open
+  AI product, ranking, research and evidence datasets to AI agents over stdio.
+  It provides 11 tools covering a 1,122-product AI catalog, three Harpd Rank
+  boards (overall, monthly, weekly), 28 category boards, the AI Market Index,
+  AI agent / AI tools / developer tools Discovery Index slices, published
+  monthly research and the Harpd Evidence Graph. Every tool result carries
+  mandatory provenance (source, sourceUrl, dataset path, updatedAt, license,
+  attribution and evidence links). The server encodes two domain rules: that
+  rankPoints are promotional placement bought with Credits rather than an
+  editorial quality score, and that the repository contains three live
+  period-scoped board snapshots rather than a multi-month historical time
+  series.
+keywords:
+  - mcp
+  - model context protocol
+  - ai agents
+  - artificial intelligence
+  - ai products
+  - ai tools
+  - ai rankings
+  - open data
+  - dataset
+  - provenance
+  - typescript
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+version: "0.1.0"
+date-released: "2026-09-16"
+references:
+  - type: dataset
+    title: "Harpd AI Datasets"
+    authors:
+      - family-names: "Harpd"
+    repository-code: "https://github.com/harpd-dev/harpd-ai-datasets"
+    url: "https://harpd.com/data/"
+    license: CC-BY-4.0
+    license-url: "https://creativecommons.org/licenses/by/4.0/"
+    notes: >-
+      The open datasets this server reads at runtime. Licensed CC BY 4.0;
+      attribution "Data from Harpd (https://harpd.com/)" is required.

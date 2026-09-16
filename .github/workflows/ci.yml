@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: install → lint → build → test (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['20', '22']
+
+    steps:
+      - name: Checkout harpd-mcp
+        uses: actions/checkout@v4
+
+      - name: Checkout the datasets (tests run against real data, not fixtures)
+        uses: actions/checkout@v4
+        with:
+          repository: harpd-dev/harpd-ai-datasets
+          path: .datasets
+          ref: main
+
+      - name: Set up Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+        env:
+          HARPD_DATA_BASE: file://${{ github.workspace }}/.datasets/
+
+      - name: Smoke-test the server over raw stdio
+        run: node examples/raw-stdio.mjs
+        env:
+          HARPD_DATA_BASE: file://${{ github.workspace }}/.datasets/
+
+      - name: Verify the npm package contents
+        run: npm pack --dry-run
