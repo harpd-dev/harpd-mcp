@@ -1,0 +1,69 @@
+{
+  "name": "harpd-mcp",
+  "version": "0.1.0",
+  "description": "MCP server exposing Harpd's open AI product, ranking, research and evidence datasets to AI agents.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-agents",
+    "ai",
+    "dataset",
+    "open-data",
+    "ai-tools",
+    "claude",
+    "typescript",
+    "llm"
+  ],
+  "homepage": "https://harpd.com/data/",
+  "bugs": {
+    "url": "https://github.com/harpd-dev/harpd-mcp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harpd-dev/harpd-mcp.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "bin": {
+    "harpd-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "docs",
+    "examples/raw-stdio.mjs",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "node dist/index.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "eslint": "^9.26.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.1",
+    "vitest": "^3.1.2"
+  }
+}
