@@ -19,13 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Note on scope: this MIT licence covers the source code of harpd-mcp. It does
-NOT cover the Harpd datasets this server reads. Those are published by Harpd
-under CC BY 4.0 and require attribution:
-
-    Data from Harpd (https://harpd.com/)
-
-See https://harpd.com/data/ for the canonical dataset licence terms.
