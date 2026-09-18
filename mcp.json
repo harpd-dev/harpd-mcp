@@ -5,7 +5,7 @@
       "description": "Live rankings and pricing for 10,000+ AI products and LLMs. Free tier; paid data via x402 (USDC on Base, no signup, no API key). Hosted endpoint mirrors the harpd-mcp open datasets plus paid, x402-metered queries.",
       "type": "streamable-http",
       "url": "https://api.harpd.com/mcp",
-      "registry": "https://registry.modelcontextprotocol.io/v0/servers/com.harpd/agent-data",
+      "registry": "https://registry.modelcontextprotocol.io/v0/servers/com.harpd%2Fagent-data/versions",
       "repository": "https://github.com/harpd-dev/harpd-mcp"
     }
   }
